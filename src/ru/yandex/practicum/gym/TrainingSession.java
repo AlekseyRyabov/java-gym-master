@@ -1,14 +1,31 @@
 package ru.yandex.practicum.gym;
 
+import java.time.DayOfWeek;
+import java.util.Objects;
+
+/**
+ * Занятие.
+ */
 public class TrainingSession {
 
-    //группа
+    /**
+     * Группа.
+     */
     private Group group;
-    //тренер
+
+    /**
+     * Тренер.
+     */
     private Coach coach;
-    //день недели
+
+    /**
+     * День недели.
+     */
     private DayOfWeek dayOfWeek;
-    //время начала занятия
+
+    /**
+     * Время начала занятия.
+     */
     private TimeOfDay timeOfDay;
 
     public TrainingSession(Group group, Coach coach, DayOfWeek dayOfWeek, TimeOfDay timeOfDay) {
@@ -16,6 +33,22 @@ public class TrainingSession {
         this.coach = coach;
         this.dayOfWeek = dayOfWeek;
         this.timeOfDay = timeOfDay;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TrainingSession trainingSession = (TrainingSession) o;
+        return coach.equals(trainingSession.coach)
+            && dayOfWeek == trainingSession.dayOfWeek
+            && group.equals(trainingSession.group)
+            && timeOfDay.equals(trainingSession.timeOfDay);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(coach, group, dayOfWeek, timeOfDay);
     }
 
     public Group getGroup() {

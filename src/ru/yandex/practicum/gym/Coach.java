@@ -2,13 +2,24 @@ package ru.yandex.practicum.gym;
 
 import java.util.Objects;
 
+/**
+ * Тренер.
+ */
 public class Coach {
 
-    //фамилия
+    /**
+     * Фамилия.
+     */
     private String surname;
-    //имя
+
+    /**
+     * Имя.
+     */
     private String name;
-    //отчество
+
+    /**
+     * Отчество.
+     */
     private String middleName;
 
     public Coach(String surname, String name, String middleName) {
