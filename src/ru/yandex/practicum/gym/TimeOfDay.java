@@ -2,11 +2,19 @@ package ru.yandex.practicum.gym;
 
 import java.util.Objects;
 
+/**
+ * Время начала занятия.
+ */
 public class TimeOfDay implements Comparable<TimeOfDay> {
 
-    //часы (от 0 до 23)
+    /**
+     * Часы (от 0 до 23).
+     */
     private int hours;
-    //минуты (от 0 до 59)
+
+    /**
+     * Минуты (от 0 до 59.
+     */
     private int minutes;
 
     public TimeOfDay(int hours, int minutes) {
